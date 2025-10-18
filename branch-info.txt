@@ -24,10 +24,11 @@ Branches in this repo (with details):
     1786399 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-10-18T15:55:33Z | Auto-update branch-info.txt
     bb79f0c | Author: Hasset Admasu <188715591+Hasset-hub@users.noreply.github.com> | Committer: GitHub <noreply@github.com> | Date: 2025-10-18T11:55:24-04:00 | Initial commit
 - main
-  SHA: b231aa97a1c2321a265490bbe3cf9d6de1fee025
-  Commits: 4
+  SHA: 6dbd7b8e42fdc87385e0ee94fe96c6f68b0692b2
+  Commits: 7
   Recent commits:
+    6dbd7b8 | Author: Hasset Admasu <188715591+Hasset-hub@users.noreply.github.com> | Committer: Hasset Admasu <188715591+Hasset-hub@users.noreply.github.com> | Date: 2025-10-18T23:14:32Z | Merge branch 'lab7'
+    d10bca3 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-10-18T23:14:16Z | Auto-update branch-info.txt
+    a2f49a3 | Author: Hasset Admasu <188715591+Hasset-hub@users.noreply.github.com> | Committer: Hasset Admasu <188715591+Hasset-hub@users.noreply.github.com> | Date: 2025-10-18T23:13:57Z | Complete lab7 tasks: mocking, parameterized test, coverage
     b231aa9 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-10-18T15:56:20Z | Auto-update branch-info.txt
     531d959 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-10-18T15:56:05Z | Auto-update branch-info.txt
-    1786399 | Author: GitHub Actions <actions@github.com> | Committer: GitHub Actions <actions@github.com> | Date: 2025-10-18T15:55:33Z | Auto-update branch-info.txt
-    bb79f0c | Author: Hasset Admasu <188715591+Hasset-hub@users.noreply.github.com> | Committer: GitHub <noreply@github.com> | Date: 2025-10-18T11:55:24-04:00 | Initial commit
