@@ -1,4 +1,5 @@
 from unittest import mock
+from unittest.mock import patch
 
 import pytest
 
@@ -17,9 +18,6 @@ from presidio_anonymizer.entities import InvalidParamError
 ])
 def test_valid_keys(key):
     """Test that validate succeeds for valid key sizes (128, 192, 256 bits)."""
-    from presidio_anonymizer.operators.encrypt import Encrypt
-    
-    # Try this exact format that the autograder is looking for
     Encrypt().validate({"key": key})
     
 @mock.patch.object(AESCipher, "encrypt")
@@ -62,22 +60,24 @@ def test_given_verifying_an_invalid_length_key_then_ipe_raised():
     ):
         Encrypt().validate(params={"key": "key"})
 
-@mock.patch.object(AESCipher, "is_valid_key_size")  # Correct patch target
-def test_given_verifying_an_invalid_length_bytes_key_then_ipe_raised(mock_is_valid_key_size):  # Properly renamed mock variable
+
+def test_given_verifying_an_invalid_length_bytes_key_then_ipe_raised():
     """Test that validate raises an error for invalid key length."""
-    # Set return_value to False to trigger the error path
-    mock_is_valid_key_size.return_value = False
-    
-    with pytest.raises(
-        InvalidParamError,
-        match="Invalid input, key must be of length 128, 192 or 256 bits",
-    ):
-        Encrypt().validate(params={"key": b'1111111111111111'})
+    with patch('presidio_anonymizer.operators.aes_cipher.AESCipher.is_valid_key_size') as mock_is_valid_key_size:
+        mock_is_valid_key_size.return_value = False
+        
+        with pytest.raises(
+            InvalidParamError,
+            match="Invalid input, key must be of length 128, 192 or 256 bits",
+        ):
+            Encrypt().validate(params={"key": b'1111111111111111'})
+
 
 def test_operator_name():
     from presidio_anonymizer.operators import Encrypt
     op = Encrypt()
     assert op.operator_name() == "encrypt"
+
 
 def test_operator_type():
     from presidio_anonymizer.operators import OperatorType
